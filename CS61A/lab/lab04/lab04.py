@@ -7,7 +7,7 @@ def divide(quotients, divisors):
     >>> divide(range(1, 5), range(20, 25))
     {1: [20, 21, 22, 23, 24], 2: [20, 22, 24], 3: [21, 24], 4: [20, 24]}
     """
-    return {____: ____ for ____ in ____}
+    return {q:[d for d in divisors if d%q ==0] for q in quotients}
 
 
 def buy(required_fruits, prices, total_amount):
@@ -29,9 +29,9 @@ def buy(required_fruits, prices, total_amount):
             print(cart)
         elif fruits and amount > 0:
             fruit = fruits[0]
-            price = ____
-            for k in ____:
-                add(____, ____, ____)
+            price = prices[fruit]
+            for k in range(1,amount//price+1):
+                add(fruits[1:], amount-price*k, cart+display(fruit,k))
     add(required_fruits, total_amount, '')
 
 
@@ -64,6 +64,9 @@ def distance(city_a, city_b):
     5.0
     """
     "*** YOUR CODE HERE ***"
+    x1,x2=get_lon(city_a),get_lon(city_b)
+    y1,y2=get_lat(city_a),get_lat(city_b)
+    return sqrt((x1-x2)**2 + (y1-y2)**2)
 
 def closer_city(lat, lon, city_a, city_b):
     """
@@ -81,6 +84,8 @@ def closer_city(lat, lon, city_a, city_b):
     'Bucharest'
     """
     "*** YOUR CODE HERE ***"
+    virtual_city=make_city("virtual_city",lat,lon)
+    return get_name(city_b) if distance(virtual_city,city_a) > distance(virtual_city,city_b) else get_name(city_a)
 
 def check_city_abstraction():
     """
@@ -104,6 +109,10 @@ def check_city_abstraction():
     'Bucharest'
     >>> change_abstraction(False)
     """
+    "*** YOUR CODE HERE ***"
+
+    
+
 
 # Treat all the following code as being behind an abstraction layer,
 # you shouldn't need to look at it.
