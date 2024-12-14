@@ -1,0 +1,17 @@
+#!/bin/bash
+# phonebook
+
+if [ $1 == 'list' ]; then
+	if [ ! -s phonebook.txt ]; then
+        	echo "phonebook is empty"
+	else
+		cat phonebook.txt
+elif [ $1 == 'new' ]; then
+	echo "$2 $3 $4" >> phonebook.txt # must use "" instead of ''
+elif [ $1 == 'lookup' ]; then
+	grep "$2 $3" phonebook.txt
+elif [ $1 == 'remove' ]; then
+	grep -v "$2 $3" > phonebook.txt
+elif [ $1 == 'clear' ]; then
+	> phonebook.txt 
+fi

@@ -1,6 +1,5 @@
 """Typing test implementation"""
 
-from sys import platlibdir
 from utils import lower, split, remove_punctuation, lines_from_file
 from ucb import main, interact, trace
 from datetime import datetime
