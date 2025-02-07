@@ -1,4 +1,4 @@
-#Lab03-Solusion
+# Lab03-Solusion
 
 Well, to be honest, my vim was already set up before taking this course.
 I don't want to mess up my vim configuration, so I plan to skip this lab. 
